@@ -11,7 +11,7 @@ public class NumbersGame {
 //0123401234012340123401234
         int[][] arr = new int[5][5];
 
-        for (int i = 0; i < arr.length; i++) { //
+        for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 arr[i][j] = i;
             }
