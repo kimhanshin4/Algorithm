@@ -25,7 +25,6 @@ public class MostPickedNumberWithMap {
 
         int keyNum = 0;
         int valueNum = 0;
-        int result = 0;
 //        for (int i = 0; i < ; i++) {}
         for (Integer key : numMap.keySet()) { //변수를 줘서 키들을 꺼내오는 목적
             if (valueNum < numMap.get(key)) {
