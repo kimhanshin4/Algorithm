@@ -1,6 +1,6 @@
 package example;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MostPickedNumber {
@@ -13,27 +13,26 @@ public class MostPickedNumber {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = sc.nextInt();
         }
-
-        // 카운트 해야할 배열 생성
+//        System.out.println("입력한 수" + Arrays.toString(arr));
+//        System.out.println("------------");
+        // 카운트 해야 할 배열 생성
         int[] countArr = new int[11];
         for (int i = 0; i < arr.length; i++) {
             int countNum = arr[i];
             countArr[countNum] += 1;
-        }
 
-        // 가장 높은 카운트 값
-        int maxNum = 0;
-        int answer = 0;
+        } // countArr[]에 횟수가 쌓임
+//        System.out.println(Arrays.toString(countArr)); //쌓인 횟수 확인
+//        System.out.println("------------");
+
+        int max = 0;
+        int index = 0;
         for (int i = 0; i < countArr.length; i++) {
-//            maxNum = countArr[countNum+i];
-//              if (maxNum>countArr[countNum]) {
-                     answer = maxNum;
-                }
+            if (max < countArr[i]) {
+                max = countArr[i];
+                index = i;
             }
         }
-
-        //0 1 1 0 0 0 0 0 3 0 0
-
-//        System.out.println();
-//    }
-//}
+        System.out.println("가장 많이 입력한 숫자 : " + index);
+    }
+}
