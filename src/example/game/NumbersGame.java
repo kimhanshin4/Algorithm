@@ -1,4 +1,4 @@
-package example;
+package example.game;
 
 import java.util.Arrays;
 
