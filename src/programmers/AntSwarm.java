@@ -12,7 +12,7 @@ public class AntSwarm {
     //        return answer;
     //    }
     public static void main(String[] args) {
-        int hp = 6837;
+        int hp = 637;
         int answer;
         int generalAnt = 5;
         int killerAnt = 3;
@@ -77,11 +77,42 @@ public class AntSwarm {
         answer = generalAnt + killerAnt + workerAnt;
         holdingTwo();
         System.out.println("여치 : ㅇ..이 미친 개미들이...끄억.");
-        holdingTwo();
-        System.out.println("활약한 개미의 수 : " + answer);
         holdingOne();
         System.out.println("개미군단 : 오늘을 기억하라.");
+        holdingTwo();
+        System.out.println("---------");
+        System.out.println("활약한 개미의 수 : " + answer);
     }
+    //제출 원본
+    //int answer;
+    //        int generalAnt = 5;
+    //        int killerAnt = 3;
+    //        int workerAnt = 1;
+    //        int count;
+    ////        System.out.println("hp : " + hp);
+    ////        System.out.println("---------");
+    //
+    //        count = hp / generalAnt;
+    //        hp = hp - generalAnt * count;
+    //        generalAnt = count;
+    ////        System.out.println("generalAnt : " + generalAnt);
+    ////        System.out.println("hp : " + hp);
+    ////        System.out.println("---------");
+    //
+    //        count = hp / killerAnt;
+    //        hp = hp - killerAnt * count;
+    //        killerAnt = count;
+    ////        System.out.println("killerAnt : " + killerAnt);
+    ////        System.out.println("hp : " + hp);
+    ////        System.out.println("---------");
+    //
+    //        count = hp / workerAnt;
+    //        hp = hp - workerAnt * count;
+    //        workerAnt = count;
+    ////        System.out.println("workerAnt : " + workerAnt);
+    ////        System.out.println("---------");
+    //
+    //        answer = generalAnt + killerAnt + workerAnt;
 
     public static void holdingOne() {
         try {
