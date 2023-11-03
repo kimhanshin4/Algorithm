@@ -12,7 +12,7 @@ public class AntSwarm {
     //        return answer;
     //    }
     public static void main(String[] args) {
-        int hp = 637;
+        int hp = 18;
         int answer;
         int generalAnt = 5;
         int killerAnt = 3;
@@ -113,6 +113,11 @@ public class AntSwarm {
     ////        System.out.println("---------");
     //
     //        answer = generalAnt + killerAnt + workerAnt;
+
+    //              //이제 첨삭도 좀 하자
+    //            hp/5 = 5공격횟수
+    //            hp%5 /3 = 3공격횟수
+    //            hp%5 %3 = 1공격횟수
 
     public static void holdingOne() {
         try {
