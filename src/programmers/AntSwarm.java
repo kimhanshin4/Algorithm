@@ -12,7 +12,7 @@ public class AntSwarm {
     //        return answer;
     //    }
     public static void main(String[] args) {
-        int hp = 999;
+        int hp = 6837;
         int answer;
         int generalAnt = 5;
         int killerAnt = 3;
@@ -20,28 +20,82 @@ public class AntSwarm {
         int count;
 //        System.out.println("hp : " + hp);
 //        System.out.println("---------");
+        System.out.println("버르장머리 없는 여치와 개미군단간의 전투가 시작되었다!");
+        holdingTwo();
+        System.out.println("여치 : 풉, 미개한 개미들 같으니.");
+        holdingOne();
+        System.out.println("개미군단 : 드디어, 올 것이 왔군.");
+        holdingTwo();
+        System.out.println("---------");
 
+        System.out.println("장군개미가 여치를 공격합니다!");
         count = hp / generalAnt;
         hp = hp - generalAnt * count;
         generalAnt = count;
+        holdingTwo();
+        System.out.printf("장군개미 %d마리의 효과는 탁월했다!\n", count);
 //        System.out.println("generalAnt : " + generalAnt);
-//        System.out.println("hp : " + hp);
-//        System.out.println("---------");
+        holdingOne();
+        System.out.println("여치의 현재 hp : " + hp);
+        holdingOne();
+        System.out.println("---------");
 
+        System.out.println("병정개미가 이어서 여치를 공격합니다!");
         count = hp / killerAnt;
         hp = hp - killerAnt * count;
         killerAnt = count;
+        holdingTwo();
+        if (killerAnt == 0) {
+            System.out.printf("안타깝게도 여치는 병정개미가 활약할 체력이 없었다!\n");
+        } else {
+            System.out.printf("병정개미 %d마리의 효과는 탁월했다!\n", count);
+        }
+        holdingOne();
 //        System.out.println("killerAnt : " + killerAnt);
-//        System.out.println("hp : " + hp);
-//        System.out.println("---------");
+        System.out.println("여치의 현재 hp : " + hp);
+        holdingOne();
+        System.out.println("---------");
 
+        System.out.println("이어서 일꾼개미가 숟가락을 얹어봅니다!");
         count = hp / workerAnt;
         hp = hp - workerAnt * count;
         workerAnt = count;
+        holdingTwo();
+        if (workerAnt == 0) {
+            System.out.printf("안타깝게도 여치는 일꾼개미가 활약할 체력이 없었다!\n");
+        } else {
+            System.out.printf("일꾼개미 %d마리가 숟가락공격으로 마무리했다!\n", count);
+        }
+        holdingOne();
+        System.out.println("여치의 현재 hp : " + hp);
+        holdingOne();
+        System.out.println("---------");
+
+        System.out.println("개미군단의 승리!");
 //        System.out.println("workerAnt : " + workerAnt);
 //        System.out.println("---------");
-
         answer = generalAnt + killerAnt + workerAnt;
-        System.out.println(answer);
+        holdingTwo();
+        System.out.println("여치 : ㅇ..이 미친 개미들이...끄억.");
+        holdingTwo();
+        System.out.println("활약한 개미의 수 : " + answer);
+        holdingOne();
+        System.out.println("개미군단 : 오늘을 기억하라.");
+    }
+
+    public static void holdingOne() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void holdingTwo() {
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
