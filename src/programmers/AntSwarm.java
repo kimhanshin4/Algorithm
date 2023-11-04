@@ -12,7 +12,7 @@ public class AntSwarm {
     //        return answer;
     //    }
     public static void main(String[] args) {
-        int hp = 18;
+        int hp = 54449;
         int answer;
         int generalAnt = 5;
         int killerAnt = 3;
@@ -28,7 +28,11 @@ public class AntSwarm {
         holdingTwo();
         System.out.println("---------");
 
-        System.out.println("장군개미가 여치를 공격합니다!");
+        System.out.println("여치의 현재 hp : " + hp);
+        holdingTwo();
+        System.out.println("---------");
+
+        System.out.println("장군개미들이 먼저 여치를 공격합니다!");
         count = hp / generalAnt;
         hp = hp - generalAnt * count;
         generalAnt = count;
@@ -40,7 +44,7 @@ public class AntSwarm {
         holdingOne();
         System.out.println("---------");
 
-        System.out.println("병정개미가 이어서 여치를 공격합니다!");
+        System.out.println("병정개미가 이어서 여치를 후둘겨 팹니다!");
         count = hp / killerAnt;
         hp = hp - killerAnt * count;
         killerAnt = count;
