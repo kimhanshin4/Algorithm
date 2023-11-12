@@ -1,5 +1,7 @@
 package programmers.level1;
 
+import java.util.*;
+
 public class WeaponsOfKights {
 
     //숫자나라 기사단의 각 기사에게는 1번부터 number까지 번호가 지정되어 있습니다. 기사들은 무기점에서 무기를 구매하려고 합니다.
@@ -18,30 +20,37 @@ public class WeaponsOfKights {
     //        return answer;
     //    }
     //}
-    static class ForTheAlience {
 
-        int number;
-        int limit;
-        int power;
-
-        public ForTheAlience(int number, int limit, int power) {
-            this.number = number; //기사단원 수
-            this.limit = limit; //공격력 제한수치
-            this.power = power; //limit에 의한 무기 공격력
-        }
-    }
 
     public static int solution(int number, int limit, int power) {
+        int[] knights = new int[number];
         int result = 0;
-        int measure;
-        //기사단원 수
-
-        //약수 구하기
-        return result;
+        int measureCnt = 0;
+        int iron = 0;
+        //기사단원이 구매 할 초기 무기의 공격력 (기사단 번호 별 약수 갯수 구하기)
+        for (int i = 1; i <= number; i++) {
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    measureCnt++; //약수시 카운트업
+                }
+            }
+            if (measureCnt > limit) { //공격력이 제한수치를 초과할시=>
+                knights[i - 1] = power; //=>정해진 공격력값 대입
+            } else {
+                knights[i - 1] = measureCnt; //=>아니면 초기 공격력 대입
+            }
+            measureCnt = 0;
+        }
+        //무기생산에 최종적으로 필요한 철의 무게 구하기
+        for (int i = 0; i < number; i++) {
+            iron = knights[i];
+            result += iron;
+        }
+        return result; // 21 나와야됨
     }
 
     public static void main(String[] args) {
-        int number = 5;
+        int number = 10;
         int limit = 3;
         int power = 2;
         int result = solution(number, limit, power);
