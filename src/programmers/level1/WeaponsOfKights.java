@@ -1,7 +1,5 @@
 package programmers.level1;
 
-import java.util.*;
-
 public class WeaponsOfKights {
 
     //숫자나라 기사단의 각 기사에게는 1번부터 number까지 번호가 지정되어 있습니다. 기사들은 무기점에서 무기를 구매하려고 합니다.
@@ -23,28 +21,22 @@ public class WeaponsOfKights {
 
 
     public static int solution(int number, int limit, int power) {
-        int[] knights = new int[number];
+//        int[] knights = new int[number];
         int result = 0;
         int measureCnt = 0;
-        int iron = 0;
-        //기사단원이 구매 할 초기 무기의 공격력 (기사단 번호 별 약수 갯수 구하기)
         for (int i = 1; i <= number; i++) {
-            for (int j = 1; j <= i; j++) {
-                if (i % j == 0) {
-                    measureCnt++; //약수시 카운트업
+            for (int j = 1; j * j <= i; j++) {
+                if (j * j == i) {
+                    measureCnt++;
+                } else if (i % j == 0) {
+                    measureCnt += 2; //
                 }
             }
             if (measureCnt > limit) { //공격력이 제한수치를 초과할시=>
-                knights[i - 1] = power; //=>정해진 공격력값 대입
-            } else {
-                knights[i - 1] = measureCnt; //=>아니면 초기 공격력 대입
+                measureCnt = power;
             }
+            result += measureCnt;
             measureCnt = 0;
-        }
-        //무기생산에 최종적으로 필요한 철의 무게 구하기
-        for (int i = 0; i < number; i++) {
-            iron = knights[i];
-            result += iron;
         }
         return result; // 21 나와야됨
     }
@@ -58,3 +50,51 @@ public class WeaponsOfKights {
 
     }
 }
+
+//시간초과 났던 것 첨삭
+//    public static int solution(int number, int limit, int power) {
+////        int[] knights = new int[number];
+//        int result = 0;
+//        int measureCnt = 0;
+//        for (int i = 1; i <= number; i++) {
+//            for (int j = 1; j <= i; j++) {
+//                if (i % j == 0) {
+//                    measureCnt++; //약수시 카운트업
+//                }
+//            }
+//            if (measureCnt > limit) { //공격력이 제한수치를 초과할시=>
+//                measureCnt = power;
+//            }
+//            result += measureCnt;
+//            measureCnt = 0;
+//        }
+//        return result; // 21 나와야됨
+//    }
+
+//테스트 성공! But 몇몇 시간초과
+//    public static int solution(int number, int limit, int power) {
+//        int[] knights = new int[number];
+//        int result = 0;
+//        int measureCnt = 0;
+//        int iron = 0;
+//        //기사단원이 구매 할 초기 무기의 공격력 (기사단 번호 별 약수 갯수 구하기)
+//        for (int i = 1; i <= number; i++) {
+//            for (int j = 1; j <= i; j++) {
+//                if (i % j == 0) {
+//                    measureCnt++; //약수시 카운트업
+//                }
+//            }
+//            if (measureCnt > limit) { //공격력이 제한수치를 초과할시=>
+//                knights[i - 1] = power; //=>정해진 공격력값 대입
+//            } else {
+//                knights[i - 1] = measureCnt; //=>아니면 초기 공격력 대입
+//            }
+//            measureCnt = 0;
+//        }
+//        //무기생산에 최종적으로 필요한 철의 무게 구하기
+//        for (int i = 0; i < number; i++) {
+//            iron = knights[i];
+//            result += iron;
+//        }
+//        return result; // 21 나와야됨
+//    }
