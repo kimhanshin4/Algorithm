@@ -17,7 +17,7 @@ import java.util.*;
 //    }
 public class NationalCompetitionSelectionTest {
 
-    //static class 정의법, 객체 정렬, 구글링을 활용하는 법(내 입맛에 맞춰 활용)
+    //static class 정의법, 객체 정렬, 구글링을 활용 하는 법(내 입맛에 맞춰 활용)
     static class Student {
 
         int rank;
@@ -31,6 +31,7 @@ public class NationalCompetitionSelectionTest {
 
     public static int solution(int[] rank, boolean[] attendance) {
         List<Student> students = new ArrayList<>();
+
         //1. 참여가 불가능한 학생 제외시키기
         for (int i = 0; i < attendance.length; i++) {
             boolean bool = attendance[i];
@@ -53,10 +54,12 @@ public class NationalCompetitionSelectionTest {
         int value = 10000;
         int result = 0;
         for (int i = 0; i < 3; i++) {
+
+            //5. 첫 번째로 나온 학생의 번호 x 10000 / 두 번째로 나온 학생의 번호 X 100 / 세 번째로 나온 학생의 번호 X 1
             result += students.get(i).seq * value;
             value /= 100;
         }
-        //5. 첫 번째로 나온 학생의 번호 x 10000 / 두 번째로 나온 학생의 번호 X 100 / 세 번째로 나온 학생의 번호 X 1
+
         //6. 변수로 추출해서 return.
         return result;
     }
