@@ -19,26 +19,27 @@ public class WeaponsOfKights {
     //    }
     //}
 
-
+    //약수는 크게 제곱수와 제곱수가 아닌 경우로 나뉠 수 있으며, 중간 지점까지,
+    // 즉 j의 제곱이 i보다 작거나 같을 때까지 탐색한 후 제곱수의 경우 1번만 카운트하고
+    // 나머지 수는 2번 카운트하면 된다
     public static int solution(int number, int limit, int power) {
-//        int[] knights = new int[number];
         int result = 0;
         int measureCnt = 0;
         for (int i = 1; i <= number; i++) {
             for (int j = 1; j * j <= i; j++) {
-                if (j * j == i) {
+                if (j * j == i) { //j가 i의 제곱근이면 cnt 1
                     measureCnt++;
-                } else if (i % j == 0) {
-                    measureCnt += 2; //
+                } else if (i % j == 0) { //약수는 한 쌍 이므로 cnt 2
+                    measureCnt += 2;
                 }
             }
-            if (measureCnt > limit) { //공격력이 제한수치를 초과할시=>
-                measureCnt = power;
+            if (measureCnt > limit) { //cnt가 제한수치를 초과할 시
+                measureCnt = power; //제한 공격력 수치로 초기화
             }
-            result += measureCnt;
-            measureCnt = 0;
+            result += measureCnt; //cnt==result이므로 result에 쌓아줌
+            measureCnt = 0; //다음 순회를 위한 cnt초기화
         }
-        return result; // 21 나와야됨
+        return result; //==총 필요한 철의 무게
     }
 
     public static void main(String[] args) {
