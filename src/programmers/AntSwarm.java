@@ -12,7 +12,7 @@ public class AntSwarm {
     //        return answer;
     //    }
     public static void main(String[] args) {
-        int hp = 544249;
+        int hp = 471847;
         int answer;
         int generalAnt = 5;
         int killerAnt = 3;

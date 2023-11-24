@@ -15,7 +15,7 @@ public class CalculateShortfallAmount {
 //처음 가지고 있던 금액 money : 1 ≤ money ≤ 1,000,000,000, money는 자연수
 //놀이기구의 이용 횟수 count : 1 ≤ count ≤ 2,500, count는 자연수
     public static long solution(int price, int money, int count) {
-        long answer = 0;
+        long answer;
         long totalPrice = 0;
         for (int i = 1; i <= count; i++) {
             totalPrice += price * i;//count번 탔을 때 총 필요한 금액
