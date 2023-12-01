@@ -11,15 +11,64 @@ public class 수박수박수박수박수박수 {
     //n은 길이 10,000이하인 자연수입니다.
     public static String solution(int n) {
         String answer = "";
-        int[] subakSubak = new int[n];
-        List<String> subakSubak = new ArrayList<>();
+        List<String> subakSubakSu = new ArrayList<>();
+        for (int i = 0; i < n; i++) {
+            if ((i + 1) % 2 == 1) { //홀수자리엔 "수"를
+                subakSubakSu.add("수");
+            } else { //짝수자리엔 "박"을 list에 추가
+                subakSubakSu.add("박");
+            }
+        }
+        for (String subak : subakSubakSu) { //리스트를 String으로
+            answer += subak;
+        }
 
         return answer;
     }
 
     public static void main(String[] args) {
-        int n = 3;
+        int n = 14;
         String answer = solution(n);
         System.out.println("answer = " + answer);
     }
 }
+//m
+//        String answer = "";
+//        List<String> subakSubakSu = new ArrayList<>();
+//        for (int i = 0; i < n; i++) {
+//            if ((i + 1) % 2 == 1) { //홀수자리엔 "수"를
+//                subakSubakSu.add("수");
+//            } else { //짝수자리엔 "박"을 list에 추가
+//                subakSubakSu.add("박");
+//            }
+//        }
+//        for (String subak : subakSubakSu) { //리스트를 String으로
+//            answer += subak;
+//        }
+//
+//        return answer;
+
+//KYS
+//        String answer = "";
+//        String[] subak = {"수", "박"};
+//        for (int i = 0; i < n; i++) {
+//            answer += subak[i % 2];
+//        }
+//        return answer;
+
+//KDM
+//        StringBuilder subakMaker = new StringBuilder();
+//        subakMaker.append("수");
+//        for (int i = 1; i <= n; i++) {
+//            subakMaker.append((i % 2 == 0) ? "수" : "박");
+//        }
+//        return subakMaker.toString();
+
+//KJY
+//    public String solution(int n) {
+//        String answer = "";
+//        for (int i = 0; i < n; i++) {
+//            answer += i % 2 == 0 ? "수" : "박";
+//        }
+//        return answer;
+//    }
