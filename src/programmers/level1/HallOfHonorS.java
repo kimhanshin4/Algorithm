@@ -2,7 +2,7 @@ package programmers.level1;
 
 import java.util.*;
 
-public class HallOfHonor {
+public class HallOfHonorS {
 
     //명예의 전당
 //"명예의 전당"이라는 TV 프로그램에서는 매일 1명의 가수가 노래를 부르고, 시청자들의 문자 투표수로 가수에게
@@ -37,3 +37,16 @@ public class HallOfHonor {
     }
 }
 //
+
+//s1
+//        int[] answer = new int[score.length];
+//        PriorityQueue<Integer> priorityQueue = new PriorityQueue<>();
+//        int temp = 0;
+//        for(int i = 0; i < score.length; i++) {
+//            priorityQueue.add(score[i]);
+//            if (priorityQueue.size() > k) {
+//                priorityQueue.poll();
+//            }
+//            answer[i] = priorityQueue.peek();
+//        }
+//        return answer;
