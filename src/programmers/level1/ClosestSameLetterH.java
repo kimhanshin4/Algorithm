@@ -2,7 +2,7 @@ package programmers.level1;
 
 import java.util.*;
 
-public class ClosestSameLetterS {
+public class ClosestSameLetterH {
 
     //가장 가까운 같은 글자
 //문자열 s가 주어졌을 때, s의 각 위치마다 자신보다 앞에 나왔으면서,

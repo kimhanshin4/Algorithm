@@ -2,7 +2,7 @@ package programmers.level1;
 
 import java.util.*;
 
-public class HallOfHonorS {
+public class HallOfHonorH {
 
     //명예의 전당
 //"명예의 전당"이라는 TV 프로그램에서는 매일 1명의 가수가 노래를 부르고, 시청자들의 문자 투표수로 가수에게
