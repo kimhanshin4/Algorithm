@@ -14,34 +14,98 @@
 ////s의 길이는 8000이하입니다.
 ////n은 1 이상, 25이하인 자연수입니다.
 //    public static String solution(String s, int n) {
-//        String answer = "";
-//        String[] charList = s.split("(?<=\\s)");
-//        String[] caesarList = new String[charList.length];
-//        char movedChar = ' ';
-//        int cAsc = 0;
+//        String result = "";
+//        n = n % 26; //
 //        for (int i = 0; i < s.length(); i++) {
-//            char c = s.charAt(i);
-//
-//            cAsc = c;
-//            movedChar = (char) (cAsc + 1);
-//            caesarList[i] = String.valueOf(movedChar);
+//            char ch = s.charAt(i); //문자열에서 변경할 문자 뽑기
+//            if (Character.isLowerCase(ch)) { //뽑은 문자가 소문자면
+//                ch = (char) ((ch - 'a' + n) % 26 + 'a');
+//            } else if (Character.isUpperCase(ch)) { //뽑은 문자가 대문자면
+//                ch = (char) ((ch - 'A' + n) % 26 + 'A');
+//            }
+//            result += ch;
 //        }
-//        char[] charList = {'a', 'b', 'd'};
-//        String str = String.valueOf(charList);
-//        System.out.println(Arrays.toString(caesarList));
-////        System.out.println(Arrays.toString(charList));
-////        for (int i = 1; i <= charList.length; i++) {
-////            caesarList[i] = charList[i];
-////        }
-//
-//        return answer;
+//        return result;
 //    }
 //
 //    public static void main(String[] args) {
-//        String s = "AB";
-////        String s = "a B z";
-//        int n = 1;
+////        String s = "AB";
+//        String s = "z B z";
+//        int n = 4;
 //        String answer = solution(s, n);
 //        System.out.println(answer);//"BC"
 //    }
 //}
+//
+////m1
+////        String answer = "";
+////        String[] charList = s.split("(?<=\\s)");
+////        String[] caesarList = new String[charList.length];
+////        char movedChar = ' ';
+////        int cAsc = 0;
+////        for (int i = 0; i < s.length(); i++) {
+////            char c = s.charAt(i);
+////
+////            cAsc = c;
+////            movedChar = (char) (cAsc + 1);
+////            caesarList[i] = String.valueOf(movedChar);
+////        }
+////        char[] charList = {'a', 'b', 'd'};
+////        String str = String.valueOf(charList);
+////        System.out.println(Arrays.toString(caesarList));
+//////        System.out.println(Arrays.toString(charList));
+//////        for (int i = 1; i <= charList.length; i++) {
+//////            caesarList[i] = charList[i];
+//////        }
+////
+////        return answer;
+//
+////s1-nw
+////return s.chars().map(c -> {
+////            int n = n % 26;
+////            if (c >= 'a' && c <= 'z') {
+////                return 'a' + (c - 'a' + n) % 26;
+////            } else if (c >= 'A' && c <= 'Z') {
+////                return 'A' + (c - 'A' + n) % 26;
+////            } else {
+////                return c;
+////            }
+////        }).mapToObj(c -> String.valueOf((char)c))
+////        .reduce((a, b) -> a + b).orElse("");
+//
+////s2
+////        String result = "";
+////    n = n % 26;
+////    for (int i = 0; i < s.length(); i++) {
+////      char ch = s.charAt(i);
+////      if (Character.isLowerCase(ch)) {
+////        ch = (char) ((ch - 'a' + n) % 26 + 'a');
+////      } else if (Character.isUpperCase(ch)) {
+////        ch = (char) ((ch - 'A' + n) % 26 + 'A');
+////      }
+////      result += ch;
+////    }
+////        return result;
+//
+////s3
+////        String answer = "";
+////        char[] ch = s.toCharArray();
+////        for (char c : ch) {
+////            if (c == 32) {
+////                answer += " ";
+////            } else {
+////                if (c <= 90) {
+////                    c += n;
+////                    if (c > 90) {
+////                        c -= 26;
+////                    }
+////                } else {
+////                    c += n;
+////                    if (c > 122) {
+////                        c -= 26;
+////                    }
+////                }
+////                answer += c;
+////            }
+////        }
+////        return answer;
