@@ -20,14 +20,13 @@ public class 수박수박수박수박수박수 {
             }
         }
         for (String subak : subakSubakSu) { //리스트를 String으로
-            answer += subak;
+            answer += subak; //수박수박수
         }
-
         return answer;
     }
 
     public static void main(String[] args) {
-        int n = 14;
+        int n = 5;
         String answer = solution(n);
         System.out.println("answer = " + answer);
     }
