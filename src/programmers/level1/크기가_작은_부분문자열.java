@@ -1,7 +1,5 @@
 package programmers.level1;
 
-import java.util.*;
-
 public class 크기가_작은_부분문자열 {
 
     //크기가 작은 부분문자열
@@ -15,17 +13,18 @@ public class 크기가_작은_부분문자열 {
     //p의 길이 ≤ t의 길이 ≤ 10,000
     //t와 p는 숫자로만 이루어진 문자열이며, 0으로 시작하지 않습니다.
     public static int solution(String t, String p) {
+        int length = t.length() - p.length() + 1; //for문을 돌릴 때 넣기위한 길이 작업
+        long numP = Long.parseLong(p); //"숫자"문자열을 숫자로 형변환
         int answer = 0;
-        int cnt = 0;
-        List<Integer> numList = new ArrayList<>();
-        for (int i = 0; i < t.length() - 2; i++) {
-            numList.add(Integer.parseInt(t.substring(i, i + 3)));
-            System.out.println("numList.get(i) = " + numList.get(i));
-            if (numList.get(i) <= Integer.parseInt(p)) {
-                cnt++;
+
+        for (int i = 0; i < length; i++) {
+            String numCut = t.substring(i, i + p.length()); //p의 길이 만큼 자르기
+
+            if (Long.parseLong(numCut) <= numP) { //numCut이 numP 보다 작거나 같으면
+                answer++; //answer 카운트 up
             }
         }
-        return cnt;
+        return answer;
     }
 
     public static void main(String[] args) {
@@ -50,3 +49,17 @@ public class 크기가_작은_부분문자열 {
 //            }
 //        }
 //        return cnt;
+
+//s1
+//        int length = t.length() - p.length() + 1; //for문을 돌릴 때 넣기위한 길이 작업
+//        long numP = Long.parseLong(p); //"숫자"문자열을 숫자로 형변환
+//        int answer = 0;
+//
+//        for (int i = 0; i < length; i++) {
+//            String numCut = t.substring(i, i + p.length()); //p의 길이 만큼 자르기
+//
+//            if (Long.parseLong(numCut) <= numP) { //numCut이 numP 보다 작거나 같으면
+//                answer++; //answer 카운트 up
+//            }
+//        }
+//        return answer;
