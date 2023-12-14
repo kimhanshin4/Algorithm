@@ -1,6 +1,6 @@
 package programmers.level1;
 
-public class 최소직사각형 {
+public class 최소직사각형H {
 
     //최소직사각형
 //명함 지갑을 만드는 회사에서 지갑의 크기를 정하려고 합니다. 다양한 모양과 크기의 명함들을 모두 수납할 수 있으면서,
