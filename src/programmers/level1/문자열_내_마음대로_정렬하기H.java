@@ -17,19 +17,17 @@ public class 문자열_내_마음대로_정렬하기H {
     모든 strings의 원소의 길이는 n보다 큽니다.
     인덱스 1의 문자가 같은 문자열이 여럿 일 경우, 사전순으로 앞선 문자열이 앞쪽에 위치합니다.*/
     public static String[] solution(String[] strings, int n) {
-        String[] answer = new String[strings.length];
-
-        for (int i = 0; i < strings.length; i++) { //배열의 i번째의 n번째 문자에 다시 i번째 문자열을 더함
-            answer[i] = strings[i].charAt(n) + strings[i];
-        } //ex)n=2, apple => papple
-
-        Arrays.sort(answer); //answer배열내 요소들을 오름차순 정렬=>a->z순
-        //ex){"papple","apear"} => {"apear","papple"}
-
-        for (int i = 0; i < strings.length; i++) { //각 요소들 맨 앞 문자 잘라내기
-            answer[i] = answer[i].substring(1);
+        String[] answer;
+        ArrayList<String> arr = new ArrayList<>();
+        for (int i = 0; i < strings.length; i++) {
+            arr.add("" + strings[i].charAt(n) + strings[i]); //배열의 i번째의 n번째 문자에 다시 i번째 문자열을 더함
         }
-        return answer; //깔끔
+        Collections.sort(arr); //arr내 요소들을 오름차순 정렬=>a->z순
+        answer = new String[arr.size()]; //배열 answer 의 길이를 List arr 의 길이로 초기화
+        for (int i = 0; i < arr.size(); i++) {
+            answer[i] = arr.get(i).substring(1, arr.get(i).length()); //ex)i=2 => a`p`ple
+        }
+        return answer;
     }
 
     public static void main(String[] args) {
@@ -53,14 +51,29 @@ public class 문자열_내_마음대로_정렬하기H {
     return answer;*/
 
 /*s1
-    String[] answer = new String[strings.length];
+        String[] answer = new String[strings.length];
 
-     for (int i=0; i<strings.length; i++)
-    answer[i] = strings[i].charAt(n) + strings[i];
+        for (int i = 0; i < strings.length; i++) { //배열의 i번째의 n번째 문자에 다시 i번째 문자열을 더함
+            answer[i] = strings[i].charAt(n) + strings[i];
+        } //ex)n=2, apple => papple
 
-    Arrays.sort(answer);
+        Arrays.sort(answer); //answer배열내 요소들을 오름차순 정렬=>a->z순
+        //ex){"papple","apear"} => {"apear","papple"}
 
-    for (int i=0; i<answer.length; i++)
-    answer[i] = answer[i].substring(1);
+        for (int i = 0; i < strings.length; i++) { //각 요소들 맨 앞 문자 잘라내기
+            answer[i] = answer[i].substring(1);
+        }
+        return answer; //깔끔*/
 
+/*s2
+    String[] answer = {};
+    ArrayList<String> arr = new ArrayList<>();
+        for (int i = 0; i < strings.length; i++) {
+    arr.add("" + strings[i].charAt(n) + strings[i]);
+    }
+    Collections.sort(arr);
+    answer = new String[arr.size()];
+    for (int i = 0; i < arr.size(); i++) {
+    answer[i] = arr.get(i).substring(1, arr.get(i).length());
+    }
     return answer;*/
