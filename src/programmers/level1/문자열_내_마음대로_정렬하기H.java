@@ -25,8 +25,9 @@ public class 문자열_내_마음대로_정렬하기H {
         Collections.sort(arr); //arr내 요소들을 오름차순 정렬=>a->z순
         answer = new String[arr.size()]; //배열 answer 의 길이를 List arr 의 길이로 초기화
         for (int i = 0; i < arr.size(); i++) {
-            answer[i] = arr.get(i).substring(1, arr.get(i).length()); //ex)i=2 => a`p`ple
-        }
+            answer[i] = arr.get(i)
+                .substring(1, arr.get(i).length()); //ex) papple, arr.legth=6 => (papple' ')
+        }   //=> apple
         return answer;
     }
 
@@ -66,14 +67,15 @@ public class 문자열_내_마음대로_정렬하기H {
         return answer; //깔끔*/
 
 /*s2
-    String[] answer = {};
-    ArrayList<String> arr = new ArrayList<>();
+        String[] answer;
+        ArrayList<String> arr = new ArrayList<>();
         for (int i = 0; i < strings.length; i++) {
-    arr.add("" + strings[i].charAt(n) + strings[i]);
-    }
-    Collections.sort(arr);
-    answer = new String[arr.size()];
-    for (int i = 0; i < arr.size(); i++) {
-    answer[i] = arr.get(i).substring(1, arr.get(i).length());
-    }
-    return answer;*/
+            arr.add("" + strings[i].charAt(n) + strings[i]); //배열의 i번째의 n번째 문자에 다시 i번째 문자열을 더함
+        }
+        Collections.sort(arr); //arr내 요소들을 오름차순 정렬=>a->z순
+        answer = new String[arr.size()]; //배열 answer 의 길이를 List arr 의 길이로 초기화
+        for (int i = 0; i < arr.size(); i++) {
+            answer[i] = arr.get(i)
+                .substring(1, arr.get(i).length()); //ex) papple, arr.legth=6 => (papple' ')
+        }   //=> apple
+        return answer;*/
