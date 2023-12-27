@@ -1,14 +1,15 @@
-//package programmers;
-//
-//public class DGaJa {
-//
+package programmers;
+
+public class DGaja {
+
 //    public static String solution() {
-//
+//        int answer = 0;
 //        return answer;
 //    }
 //
 //    public static void main(String[] args) {
-//        answer = solution();
+//
+//        int answer = solution();
 //        System.out.println(answer);
 //    }
-//}
+}
