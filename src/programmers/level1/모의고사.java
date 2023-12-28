@@ -23,39 +23,33 @@ public class 모의고사 {
 가장 높은 점수를 받은 사람이 여럿일 경우, return하는 값을 오름차순 정렬해주세요.*/
     //Math.max / '%'
     public static int[] solution(int[] answers) {
-        //수포자들이 찍은 패턴 배열화
-        int[] stu1 = {1, 2, 3, 4, 5};
-        int[] stu2 = {2, 1, 2, 3, 2, 4, 2, 5};
-        int[] stu3 = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
-
-        int[] scoreCnt = {0, 0, 0}; //각 수포자들의 점수를 담을 배열
-
+        int[] a = {1, 2, 3, 4, 5};
+        int[] b = {2, 1, 2, 3, 2, 4, 2, 5};
+        int[] c = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
+        int[] score = new int[3];
         for (int i = 0; i < answers.length; i++) {
-            //각 학생별 정답시 점수 up
-            if (answers[i] == stu1[i % 5]) {
-                scoreCnt[0]++;
+            if (answers[i] == a[i % a.length]) {
+                score[0]++;
             }
-            if (answers[i] == stu2[i % 8]) {
-                scoreCnt[1]++;
+            if (answers[i] == b[i % b.length]) {
+                score[1]++;
             }
-            if (answers[i] == stu3[i % 10]) {
-                scoreCnt[2]++;
-            }
-        }
-        //수포자중 가장 많은 문제를 맞춘 학생의 Count값 선별
-        int maxCnt = Math.max(Math.max(scoreCnt[0], scoreCnt[1]), scoreCnt[2]);
-        ArrayList<Integer> highestStu = new ArrayList<>();
-        for (int i = 0; i < 3; i++) { //가장 높은 점수에 도달한 학생들 선별
-            if (maxCnt == scoreCnt[i]) {
-                highestStu.add(i + 1); //=> ex) '1번' 수포자, '2번'수포자, '3번' 수포자
+            if (answers[i] == c[i % c.length]) {
+                score[2]++;
             }
         }
-        //ArrayList를 배열화
-        int[] answer = new int[highestStu.size()];
-        for (int i = 0; i < highestStu.size(); i++) {
-            answer[i] = highestStu.get(i);
+        int maxScore = Math.max(score[0], Math.max(score[1], score[2]));
+        ArrayList<Integer> list = new ArrayList<>();
+        if (maxScore == score[0]) {
+            list.add(1);
         }
-        return answer;
+        if (maxScore == score[1]) {
+            list.add(2);
+        }
+        if (maxScore == score[2]) {
+            list.add(3);
+        }
+        return list.stream().mapToInt(i -> i).toArray();
     }
 
     public static void main(String[] args) {
@@ -103,3 +97,23 @@ import java.util.Arrays;
             answer[i] = highestStu.get(i);
         }
         return answer;*/
+
+//s2
+/*
+import java.util.ArrayList;
+
+        int[] a = {1, 2, 3, 4, 5};
+        int[] b = {2, 1, 2, 3, 2, 4, 2, 5};
+        int[] c = {3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
+        int[] score = new int[3];
+        for(int i=0; i<answer.length; i++) {
+            if(answer[i] == a[i%a.length]) {score[0]++;}
+            if(answer[i] == b[i%b.length]) {score[1]++;}
+            if(answer[i] == c[i%c.length]) {score[2]++;}
+        }
+        int maxScore = Math.max(score[0], Math.max(score[1], score[2]));
+        ArrayList<Integer> list = new ArrayList<>();
+        if(maxScore == score[0]) {list.add(1);}
+        if(maxScore == score[1]) {list.add(2);}
+        if(maxScore == score[2]) {list.add(3);}
+        return list.stream().mapToInt(i->i.intValue()).toArray();*/
