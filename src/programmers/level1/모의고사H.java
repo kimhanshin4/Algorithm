@@ -3,7 +3,7 @@ package programmers.level1;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class 모의고사 {
+public class 모의고사H {
 
     /*모의고사
 문제 설명
