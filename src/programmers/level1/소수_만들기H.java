@@ -40,8 +40,8 @@ public class 소수_만들기H {
     }
 
     public static void main(String[] args) {
-//        int[] nums = {1, 2, 3, 4};
-        int[] nums = {1, 2, 7, 6, 4};
+        int[] nums = {1, 2, 3, 4};
+//        int[] nums = {1, 2, 7, 6, 4};
         int result = solution(nums);
         System.out.println(result);//1 //4
     }
