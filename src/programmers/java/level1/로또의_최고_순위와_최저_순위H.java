@@ -34,6 +34,8 @@ public class 로또의_최고_순위와_최저_순위H {
 민우가 구매한 로또 번호를 담은 배열 lottos, 당첨 번호를 담은 배열 win_nums가 매개변수로 주어집니다. 이때, 당첨
 가능한 최고 순위와 최저 순위를 차례대로 배열에 담아서 return 하도록 solution 함수를 완성해주세요.*/
     //switch
+//        int[] lottos = {44, 1, 0, 0, 31, 25};
+//        int[] win_nums = {31, 10, 45, 1, 6, 19};
     public static int[] solution(int[] lottos, int[] win_nums) {
         int zeroCnt = 0;
         int lotteryNumCnt = 0;
@@ -53,6 +55,7 @@ public class 로또의_최고_순위와_최저_순위H {
         int lowestRank;
         int highestRank;
         //등수 계산
+        //1~6등수 조건
         switch (lotteryNumCnt) {
             case 2: //2개 번호가 일치 할 때
                 lowestRank = 5; //=> 5등
